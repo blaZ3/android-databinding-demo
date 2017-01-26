@@ -6,9 +6,13 @@
         <variable
             name="greeting"
             type="String"/>
+
+        <variable
+            name="user"
+            type="yearofcode.com.databindingdemo.models.User"/>
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,13 +20,19 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
         tools:context="yearofcode.com.databindingdemo.MainActivity">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{greeting}" />
-    </RelativeLayout>
+            android:text="@{greeting, default=Greetings}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.fullName, default=FullName}" />
+    </LinearLayout>
 
 
 </layout>
